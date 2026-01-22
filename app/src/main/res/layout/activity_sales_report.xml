@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/freshmart_background">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/freshmart_primary"
+        android:elevation="4dp"
+        app:title="Sales Analytics"
+        app:titleTextColor="@color/text_white"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/text_white"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Filters Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/FreshMartCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Filters"
+                        style="@style/FreshMartText.Subtitle"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Branch Filter -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Filter by Branch"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_marginBottom="12dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/spinnerBranch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:text="All Branches"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Product Filter -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Filter by Product"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_marginBottom="12dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/spinnerProduct"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:text="All Products"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Apply Filter Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnApplyFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="Apply Filters"
+                        app:cornerRadius="12dp"
+                        app:backgroundTint="@color/freshmart_primary"
+                        app:icon="@drawable/ic_filter"
+                        app:iconGravity="textStart"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Summary Statistics Grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:weightSum="2">
+
+                <!-- Total Sales Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    style="@style/FreshMartCard">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_sales"
+                            android:tint="@color/freshmart_primary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Sales"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:id="@+id/tvGrandTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="KSh 0.00"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/freshmart_primary"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Total Orders Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    style="@style/FreshMartCard">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_orders"
+                            android:tint="@color/freshmart_secondary"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Orders"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:id="@+id/tvTotalOrders"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/freshmart_secondary"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Product Breakdown Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/FreshMartCard"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sales by Product"
+                        style="@style/FreshMartText.Subtitle"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Coke Sales -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Coca-Cola"
+                                android:textSize="15sp"
+                                android:textColor="@color/text_primary"/>
+
+                            <TextView
+                                android:id="@+id/tvCokeTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="KSh 0.00"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/freshmart_primary"/>
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progressCoke"
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_marginTop="4dp"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressTint="@color/freshmart_primary"
+                            android:progress="0"
+                            android:max="100"/>
+                    </LinearLayout>
+
+                    <!-- Fanta Sales -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Fanta"
+                                android:textSize="15sp"
+                                android:textColor="@color/text_primary"/>
+
+                            <TextView
+                                android:id="@+id/tvFantaTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="KSh 0.00"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="#FF9800"/>
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progressFanta"
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_marginTop="4dp"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressTint="#FF9800"
+                            android:progress="0"
+                            android:max="100"/>
+                    </LinearLayout>
+
+                    <!-- Sprite Sales -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Sprite"
+                                android:textSize="15sp"
+                                android:textColor="@color/text_primary"/>
+
+                            <TextView
+                                android:id="@+id/tvSpriteTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="KSh 0.00"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="#4CAF50"/>
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/progressSprite"
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_marginTop="4dp"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:progressTint="#4CAF50"
+                            android:progress="0"
+                            android:max="100"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Sales List -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/FreshMartCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recent Transactions"
+                        style="@style/FreshMartText.Subtitle"
+                        android:layout_marginBottom="16dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewReport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+
+                    <!-- Empty State -->
+                    <LinearLayout
+                        android:id="@+id/emptyState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="32dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/ic_no_data"
+                            android:alpha="0.3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No sales data"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="12dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

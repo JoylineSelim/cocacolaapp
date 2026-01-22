@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_sm"
+    style="@style/FreshMartCard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_lg">
+
+        <!-- Header with Product Name and Branch -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/spacing_md">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coca-Cola"
+                    style="@style/FreshMartText.Subtitle"
+                    android:textColor="@color/freshmart_primary"/>
+
+                <TextView
+                    android:id="@+id/tvBranchName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nairobi Branch"
+                    style="@style/FreshMartText.Caption"
+                    android:layout_marginTop="@dimen/spacing_xs"/>
+            </LinearLayout>
+
+            <!-- Status Badge -->
+            <TextView
+                android:id="@+id/tvStockStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Healthy"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_white"
+                android:background="@drawable/bg_stock_badge_in"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"/>
+        </LinearLayout>
+
+        <!-- Stock Progress Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/spacing_md">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/spacing_xs">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Stock Level"
+                    style="@style/FreshMartText.Caption"/>
+
+                <TextView
+                    android:id="@+id/tvStockQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="250 / 500"
+                    style="@style/FreshMartText.Body"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressStock"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressTint="@color/status_in_stock"
+                android:max="100"
+                android:progress="50"/>
+        </LinearLayout>
+
+        <!-- Stock Adjustment -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/spacing_md">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Add/Remove Stock"
+                style="@style/FreshMartTextInputLayout"
+                android:layout_marginEnd="@dimen/spacing_sm">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etStockAdjustment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:textColor="@color/text_primary"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpdateStock"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:text="Update"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/freshmart_secondary"/>
+        </LinearLayout>
+
+        <!-- Price Management -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_color"
+            android:layout_marginBottom="@dimen/spacing_md"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Unit Price (KSh)"
+                style="@style/FreshMartTextInputLayout"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                app:prefixText="KSh ">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_primary"
+                    android:text="50.00"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpdatePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:text="Update Price"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/freshmart_primary"/>
+        </LinearLayout>
+
+        <!-- Last Updated Info -->
+        <TextView
+            android:id="@+id/tvLastUpdated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last updated: 2 hours ago"
+            style="@style/FreshMartText.Caption"
+            android:layout_marginTop="@dimen/spacing_sm"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/freshmart_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_lg">
+
+        <!-- Success Icon -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="60dp"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/status_in_stock"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:layout_marginBottom="@dimen/spacing_lg">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_check"
+                app:tint="@color/text_white"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Success Message -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Successful!"
+            style="@style/FreshMartText.Title"
+            android:textColor="@color/status_in_stock"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_sm"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thank you for your purchase"
+            style="@style/FreshMartText.Body"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/spacing_xl"/>
+
+        <!-- Transaction Details Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/FreshMartCard"
+            android:layout_marginBottom="@dimen/spacing_lg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_lg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transaction Details"
+                    style="@style/FreshMartText.Subtitle"
+                    android:layout_marginBottom="@dimen/spacing_md"/>
+
+                <!-- Transaction ID -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/spacing_sm">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Transaction ID:"
+                        style="@style/FreshMartText.Caption"/>
+
+                    <TextView
+                        android:id="@+id/tvTransactionId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TXN12345678"
+                        style="@style/FreshMartText.Body"
+                        android:textStyle="bold"
+                        android:textColor="@color/freshmart_primary"/>
+                </LinearLayout>
+
+                <!-- M-Pesa Reference -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/spacing_sm">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="M-Pesa Reference:"
+                        style="@style/FreshMartText.Caption"/>
+
+                    <TextView
+                        android:id="@+id/tvMpesaRef"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="QGH7XYZ123"
+                        style="@style/FreshMartText.Body"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <!-- Date & Time -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/spacing_sm">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Date &amp; Time:"
+                        style="@style/FreshMartText.Caption"/>
+
+                    <TextView
+                        android:id="@+id/tvDateTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jan 22, 2026 14:30"
+                        style="@style/FreshMartText.Body"/>
+                </LinearLayout>
+
+                <!-- Branch -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Branch:"
+                        style="@style/FreshMartText.Caption"/>
+
+                    <TextView
+                        android:id="@+id/tvBranch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nairobi"
+                        style="@style/FreshMartText.Body"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Items Purchased Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/FreshMartCard"
+            android:layout_marginBottom="@dimen/spacing_lg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_lg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Items Purchased"
+                    style="@style/FreshMartText.Subtitle"
+                    android:layout_marginBottom="@dimen/spacing_md"/>
+
+                <TextView
+                    android:id="@+id/tvItemsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Coke x 2\nFanta x 1\nSprite x 1"
+                    style="@style/FreshMartText.Body"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="@dimen/spacing_md"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color"
+                    android:layout_marginBottom="@dimen/spacing_md"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Total Paid"
+                        style="@style/FreshMartText.Subtitle"/>
+
+                    <TextView
+                        android:id="@+id/tvTotalPaid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="KSh 200.00"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/freshmart_primary"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Actions -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDownloadReceipt"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="DOWNLOAD RECEIPT"
+            style="@style/FreshMartButton.Outlined"
+            android:layout_marginBottom="@dimen/spacing_md"
+            app:icon="@drawable/ic_download"
+            app:iconGravity="textStart"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="DONE"
+            style="@style/FreshMartButton.Primary"/>
+
+    </LinearLayout>
+</ScrollView>

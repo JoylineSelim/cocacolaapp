@@ -1,0 +1,111 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Cocacola" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/freshmart_primary</item>
+        <item name="colorPrimaryDark">@color/freshmart_primary_dark</item>
+        <item name="colorAccent">@color/freshmart_accent</item>
+        <item name="android:windowBackground">@color/freshmart_background</item>
+    </style>
+
+    <style name="Theme.Cocacola" parent="Base.Theme.Cocacola" />
+
+    <style name="FreshMartCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="FreshMartCard.Product" parent="FreshMartCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="FreshMartText">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+
+
+    <style name="StockBadge">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_badge</item>
+    </style>
+
+    <!-- Base Application Theme -->
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/freshmart_primary</item>
+        <item name="colorPrimaryDark">@color/freshmart_primary_dark</item>
+        <item name="colorAccent">@color/freshmart_accent</item>
+        <item name="android:windowBackground">@color/freshmart_background</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+
+
+    <!-- FreshMart Button Styles -->
+    <style name="FreshMartButton" parent="Widget.Material3.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="backgroundTint">@color/freshmart_primary</item>
+    </style>
+
+    <style name="FreshMartButton.Primary">
+        <item name="backgroundTint">@color/freshmart_primary</item>
+    </style>
+
+    <style name="FreshMartButton.Secondary">
+        <item name="backgroundTint">@color/freshmart_secondary</item>
+    </style>
+
+    <style name="FreshMartButton.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeColor">@color/freshmart_primary</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:textColor">@color/freshmart_primary</item>
+    </style>
+
+    <!-- FreshMart Text Input Layout -->
+    <style name="FreshMartTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/freshmart_primary</item>
+        <item name="hintTextColor">@color/text_hint</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="FreshMartText.Title">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="FreshMartText.Subtitle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="FreshMartText.Body">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="FreshMartText.Caption">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+</resources>

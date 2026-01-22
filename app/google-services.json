@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "344499819580",
+    "project_id": "cocacolaapp-79bb3",
+    "storage_bucket": "cocacolaapp-79bb3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344499819580:android:f746bdf7f7d5ea1e369f39",
+        "android_client_info": {
+          "package_name": "com.example.cocacola"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANFZDck_J8FUEscRXvErmpzUMf1-JeoR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

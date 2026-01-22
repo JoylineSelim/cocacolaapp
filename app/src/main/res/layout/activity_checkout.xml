@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/freshmart_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_lg">
+
+        <!-- Header Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/FreshMartCard"
+            android:layout_marginBottom="@dimen/spacing_lg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_lg"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Checkout"
+                    style="@style/FreshMartText.Title"
+                    android:textColor="@color/freshmart_primary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Complete your purchase"
+                    style="@style/FreshMartText.Caption"
+                    android:layout_marginTop="@dimen/spacing_xs"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Order Summary Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/FreshMartCard"
+            android:layout_marginBottom="@dimen/spacing_lg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_lg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order Summary"
+                    style="@style/FreshMartText.Subtitle"
+                    android:layout_marginBottom="@dimen/spacing_md"/>
+
+                <TextView
+                    android:id="@+id/tvOrderSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Branch: Nairobi\n\nItems:\nCoke x 2\nFanta x 1"
+                    style="@style/FreshMartText.Body"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="@dimen/spacing_md"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:layout_marginBottom="@dimen/spacing_md"/>
+
+                <TextView
+                    android:id="@+id/tvTotalAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total: KSh 150.00"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/freshmart_primary"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Payment Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/FreshMartCard"
+            android:layout_marginBottom="@dimen/spacing_lg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_lg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💳 M-Pesa Payment"
+                    style="@style/FreshMartText.Subtitle"
+                    android:layout_marginBottom="@dimen/spacing_md"/>
+
+                <!-- Phone Number Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone Number (254...)"
+                    style="@style/FreshMartTextInputLayout"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    app:startIconDrawable="@drawable/ic_phone"
+                    app:startIconTint="@color/freshmart_secondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLength="12"
+                        android:textColor="@color/text_primary"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You will receive an M-Pesa payment prompt on your phone."
+                    style="@style/FreshMartText.Caption"
+                    android:layout_marginBottom="@dimen/spacing_lg"/>
+
+                <!-- Pay Now Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPayNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="PAY NOW"
+                    style="@style/FreshMartButton.Secondary"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cancel Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="CANCEL"
+            style="@style/FreshMartButton.Outlined"/>
+    </LinearLayout>
+</ScrollView>
